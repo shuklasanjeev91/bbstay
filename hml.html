@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style type="text/css">
+ 	.room_pop{
+ 		position: absolute;
+	    top: -0%;
+	    left: 50%;
+	    opacity: 1;
+	    margin-top: 45px;
+	    transition: translate(-50%, -50%) scale(1.25);
+		width: 14%;
+		padding: 20px;
+		text-align: left;
+		background: #fff;
+		box-shadow: 1px 1px 4px 4px rgba(0,0,0,0.6);
+		border-radius: 10px;
+		transition: top 0ms ease-in-out 200ms,
+    				opacity 100ms ease-in-out 0ms,
+    				transform 100ms ease-in-out 0ms;
+ 	}
+ 	.room_pop.active{
+	top: 50%;
+	opacity: 1;
+    transition: translate(-50%, -50%) scale(1.25);
+	transition: top 0ms all ease-in-out 200ms,
+    			opacity 200ms all ease-in-out 0ms,
+    			transform 200ms all ease-in-out 0ms;
+	
+	} 
+	.room_pop form .field_wrapper label{
+		font-size: 18px;
+		padding: 5px; 
+	}
+	.room_pop form .field_wrapper input{
+		text-align: center;
+		font-size: 12px;
+		padding: 3px;
+		border-radius:4px;
+		border: 1px solid;
+	}
+	.room_pop form .add_button{
+		color: #000;
+		cursor: pointer;
+		margin-top: 10px;
+		font-size: 16px;
+
+	}
+
+
+
+
+
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}
+</style>
+</head>
+
+<body>
+		<div class="room_pop">
+		<form id="form" action="javascript:void(0)">
+			<div class="field_wrapper">
+        			<!-- <p>Room <span id="demo">1</span> Guest <span id="guest">1</span></p> -->
+						<label for="amount">Guests :-</label>
+						<input type="number" class="form-control per" placeholder="1" min="1" max="3" pattern="{0-3}" onKeyPress="if(this.value.length==1) return false;" name="amount[]">
+			</div>
+			<a href="javascript:void(0);" class="add_button" title="Add field">Add Room</a>
+		</form>
+		</div>
+<script type="text/javascript">
+
+		$(document).ready(function () {
+
+		var maxField = 6; // Total 6 product fields we add
+
+		var addButton = $('.add_button'); // Add more button selector
+
+		var wrapper = $('.field_wrapper'); // Input fields wrapper
+
+		var fieldHTML = `<div class="form-elements">
+						 <label for="amount">Guests :-</label>
+						 <input type="number" class="form-control per" placeholder="1" min="1" max="3" maxlength="2" name="amount[]">
+						 <a href="javascript:void(0);" class="remove_button" title="Add field" style="color:#000;text-decoration:none;font-size:18px;left:10%;">&times;</a>
+						 </div>`; //New input field html
+		var x = 1; //Initial field counter is 1
+		$(addButton).click(function () {
+			//Check maximum number of input fields
+			if (x < maxField) {
+				x++; //Increment field counter
+				$(wrapper).append(fieldHTML);
+          		document.getElementById("demo").innerHTML = x;
+			}
+		});
+
+		//Once remove button is clicked
+		$(wrapper).on('click', '.remove_button', function (e) {
+			e.preventDefault();
+			$(this).parent().closest(".form-elements").remove();
+			x--; //Decrement field counter
+       		 document.getElementById("demo").innerHTML = x;
+		});
+	});
+		$(document).ready(function () {
+       		$('.form-group').on('input','.per',function(){
+				var totalSum = 0;
+				$('.form-group .per').each(function(){
+					var inputVal = $(this).val();
+					if($.isNumeric(inputVal)){
+						totalSum += parseFloat(inputVal);
+					}
+				});
+				$('#guest').text(totalSum);
+			});
+      	});
+</script>
+
+</body>
+
+</html>
+<!-- 	function incrementValue(){
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value<3){
+        value++;
+            document.getElementById('number').value = value;
+    }
+};
+    function decrementValue(){
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if(value>1){
+        value--;
+            document.getElementById('number').value = value;
+    }
+
+}; -->

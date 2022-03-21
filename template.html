@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Template</title>
+	<link rel="stylesheet" type="text/css" href="template.css">
+	<!-- font awesome link -->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!-- jquery cdn -->
+	<script src="jquerycdn/jquery-3.6.0.min.js"></script>
+	<!-- owl carousel -->
+	<script src="crousel/owl.carousel.min.js"></script>
+	<link rel="stylesheet" href="crousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="crousel/owl.theme.default.min.css"/>
+	<!-- date picker links -->
+	<script src="theme/js/t-datepicker.min.js"></script>
+    <link href="theme/css/t-datepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="theme/css/themes/t-datepicker-blue.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!-- Header section starts -->
+	<header>
+		<nav class="navbar">
+			<div class="max-width">
+				<div class="logo">
+					<img src="images/logo.png" alt="logo">
+				</div>
+				<div class="menu">
+					<div class="srch-bar">
+						<div class="search">
+							<input type="text" name="location" placeholder="&#128269; Search near me" size="15">
+						</div>
+						<div class="container">
+							<div class="t-datepicker">
+  				 				<div class="t-check-in"></div>
+ 			   					<div class="t-check-out"></div>
+       						</div>
+						</div>
+						<div class="rooms" id="rooms">
+							<p><span id="demo">2</span>  Rooms, <span id="guest"> 2 </span> Guests</p>
+	       				</div>
+	       				<div class="search-btn">
+							<a><button>Search</button></a>
+						</div>
+	       			</div>
+	       			<div class="list-btn">
+						<div>
+							<button>List your properties</button>
+						</div>
+						<div>
+							<a href="#login" id="login"> <i class="fa fa-user"></i>Login/Signup</a>
+						</div>
+					</div>
+				</div>
+			</div>
+				<!-- login form when click on login -->
+				<div class="popup" id="popup">
+					<div class="close-btn" id="close-btn">&times;</div>
+						<form class="form-1">
+							<h2>Login/Signup</h2>
+							<div class="form-element">
+							<label for="email">Email</label>
+							<input type="text" name="email" id="email" placeholder="Enter your email address">
+							</div>
+							<div class="form-element">
+								<label for="password">Password</label>
+								<input type="password" name="password" id="password" placeholder="Enter your password">
+							</div>
+							<div class="form-element">
+								<input type="checkbox" name="checkbox" id="remember-me">
+								<label for="remember-me">Remember me</label>
+							</div>
+								<div class="form-element">
+								<button><a href="#">Login</a></button>
+							</div>
+							<div class="form-element">
+								<a href="#forget">Forget Password?</a>
+								<a href="#create">Create new account</a>
+
+							</div>
+						</form>
+				</div>
+				<!-- room popup when click on rooms -->
+	       			<div class="room_pop" id="room_pop">
+	       				<div class="close-btn" id="close">&times;</div>
+						<form id="form" action="javascript:void(0)">
+							<div class="field_wrapper">
+								<div class="form-group">
+									<label for="amount">Guests :-</label>
+									<input type="number" class="form-control per" placeholder="1" min="1" max="3" pattern="{0-3}" onKeyPress="if(this.value.length==1) return false;" name="amount[]">
+								</div>	
+							</div>
+							<a href="javascript:void(0);" class="add_button" title="Add field">Add Room</a>
+						</form>
+					</div>
+				<div class="menu-btn">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</div>	
+			</div>	
+		</nav>
+		
+	</header>
+	<!-- Header section ends -->
+
+	<!-- Main Section Starts -->
+	<main>
+		<!-- Home Section -->
+		<section class="home">
+			<div class="max-width">
+				<div class="home-content">
+					<div class="text-1">Find your next stay</div>
+					<div class="text-2">Search deals on hotels, home, and much more...</div>
+				</div>
+			</div>
+			<div class="crop">
+				<div class="box">
+				<div class="text">Let your curiosity do the booking</div>
+				<button class="btn"><a href="#">I'm flexible</a></button>
+				</div>
+			</div>	
+		</section>
+		<!-- scroll section -->
+			<section class="scroll">
+				<div class="headtext">
+					<div class="title">Explore india</div>
+					<p>These popular destinations have a lot to offer</p>
+				</div>
+				<div class="owl-carousel owl-theme">
+    			<div class="item">
+    				<img src="images/explore/goa.jpg">
+    				<div class="place">Goa</div>
+    				<p>5,243 porperties</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/explore/goanorth.jpg">
+    				<div class="place">Goa North</div>
+    				<p>3,904 porperties</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/explore/delhi.jpg">
+    				<div class="place">New Delhi</div>
+    				<p>2,904 porperties</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/explore/jaipur.jpg">
+    				<div class="place">Jaipur</div>
+    				<p>1,555 porperties</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/explore/southgoa.jpg">
+    				<div class="place">South Goa</div>
+    				<p>1,372 porperties</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/explore/banglore.jpg">
+    				<div class="place">Banglore</div>
+    				<p>2,042 porperties</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/explore/lonavla.jpg">
+    				<div class="place">Lonavala</div>
+    				<p>751 porperties</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/explore/pondi.jpg">
+    				<div class="place">Pondicherry</div>
+    				<p>692 porperties</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/explore/mumbai.jpg">
+    				<div class="place">Mumbai</div>
+    				<p>1,651 porperties</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/explore/udaipur.jpg">
+    				<div class="place">Udaipur</div>
+    				<p>818 porperties</p>
+    			</div>
+				</div>
+			</section>
+		<!--Explore Section starts  -->
+			<section class="explore">
+					<div class="headtext">
+						<div class="title">Inspiration for your next trip</div>
+						<p>These popular destinations have a lot to offer</p>
+					</div>
+					<div class="carousel">
+						<div class="card">
+                    		<div class="box">
+                        	<img src="images/places/img1.jpg" alt="places">
+                        	<div class="text">Mussorie</div>
+                        	<p>233 Kilometers away</p>
+                    		</div>
+						</div>
+						<div class="card">
+                    		<div class="box">
+                        	<img src="images/places/img2.jpg" alt="places">
+                        	<div class="text">Manali</div>
+                        	<p>233 Kilometers away</p>
+                    		</div>
+						</div>
+						<div class="card">
+                    		<div class="box">
+                        	<img src="images/places/img3.jpg" alt="places">
+                        	<div class="text">Kasauli</div>
+                        	<p>233 Kilometers away</p>
+                    		</div>
+						</div>
+						<div class="card">
+                    		<div class="box">
+                        	<img src="images/places/img4.jpg" alt="places">
+                        	<div class="text">Haldwani</div>
+                        	<p>233 Kilometers away</p>
+                    		</div>
+						</div>	
+			</section>
+			<!-- discover section -->
+			<section class="disc">
+				<div class="headtext">
+					<div class="title">Discover bbstays Experiences</div>
+				</div>
+				<div class="cover">
+					<div class="box1">
+						<div class="text1">
+							<p>Things to do <br> on your trip</p>
+							<button>Experiences</button>
+						</div>
+					</div>
+					<div class="box2">
+						<div class="text2">
+							<p>Things to do <br> from home</p>
+							<button>Online Experiences</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- prop scroll section -->
+			<section class="prop">
+				<div class="headtext">
+					<div class="title">Browse by property type</div>
+				</div>
+				<div class="owl-carousel owl-theme">
+    			<div class="item">
+    				<img src="images/prop/hotel.jpg">
+    				<div class="place">Hotels</div>
+    				<p>56,243 hotels</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/prop/apart.jpg">
+    				<div class="place">Apartments</div>
+    				<p>3,904 apartments</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/prop/resort.jpg">
+    				<div class="place">Resorts</div>
+    				<p>17,561 resorts</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/prop/villas.jpg">
+    				<div class="place">Villas</div>
+    				<p>1,555 villas</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/prop/cabins.jpg">
+    				<div class="place">Cabins</div>
+    				<p>1,372 cabins</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/prop/cottage.jpg">
+    				<div class="place">Cottages</div>
+    				<p>2,042 cottages</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/prop/glamping.jpg">
+    				<div class="place">Glamping</div>
+    				<p>751 Glamping sites</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/prop/service.jpg">
+    				<div class="place">Serviced Apartments</div>
+    				<p>31,855 serviced Apartments</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/prop/home.jpg">
+    				<div class="place">Vacation Homes</div>
+    				<p>1,651 vacation homes</p>
+    			</div>
+    			<div class="item">
+    				<img src="images/prop/hostels.jpg">
+    				<div class="place">Hostels</div>
+    				<p>818 hostels</p>
+    			</div><div class="item">
+    				<img src="images/prop/motels.jpg">
+    				<div class="place">Motels</div>
+    				<p>818 motels</p>
+    			</div><div class="item">
+    				<img src="images/prop/b&b.jpg">
+    				<div class="place">B&Bs</div>
+    				<p>818 B&Bs</p>
+    			</div><div class="item">
+    				<img src="images/prop/ryokan.jpg">
+    				<div class="place">Ryokans</div>
+    				<p>2,801 Ryokans</p>
+    			</div><div class="item">
+    				<img src="images/prop/rvillage.jpg">
+    				<div class="place">Resort Villages</div>
+    				<p>5,283 resort villages</p>
+    			</div><div class="item">
+    				<img src="images/prop/stays.jpg">
+    				<div class="place">Home Stays</div>
+    				<p>127,545 homestays</p>
+    			</div><div class="item">
+    				<img src="images/prop/camp.jpg">
+    				<div class="place">Campgrounds</div>
+    				<p>818 campgrounds</p>
+    			</div><div class="item">
+    				<img src="images/prop/country.jpg">
+    				<div class="place">Country Houses</div>
+    				<p>75,565 country houses</p>
+    			</div><div class="item">
+    				<img src="images/prop/farm.jpg">
+    				<div class="place">Farm Stays</div>
+    				<p>818 farm stays</p>
+    			</div><div class="item">
+    				<img src="images/prop/boats.jpg">
+    				<div class="place">Boats</div>
+    				<p>818 boats</p>
+    			</div><div class="item">
+    				<img src="images/prop/luxury.jpg">
+    				<div class="place">Luxury Tents</div>
+    				<p>91,221 luxury tents</p>
+    			</div><div class="item">
+    				<img src="images/prop/self.jpg">
+    				<div class="place">Self-catering Accomdations</div>
+    				<p>62,666 Self-catering Properties</p>
+    			</div><div class="item">
+    				<img src="images/prop/tiny.jpg">
+    				<div class="place">Tiny Houses</div>
+    				<p>575 tiny houses</p>
+				</div>
+			</section>
+			<!-- contact section starts -->
+			<div class="form">
+				<div class="text">
+					<h2>Save time, save money!</h2>
+					<p>Sign up and we'll send the best deals to you</p>
+				</div>
+				<form action="#" method="#" enctype="#">
+					<input class="input1" type="email" name="email" placeholder=" Enter your email address" required>
+					<input class="input2" type="submit" name="submit" value="Subscribe"><br>
+					<input class="input3" type="checkbox" name="checkbox" >
+					<label> Send me a link to get the FREE bbstays.com app!</label>
+				</form>
+			</div>
+	</main>
+	<!-- Main Section Ends -->
+
+	<!-- Footer section starts -->
+	<footer>
+		<section class="footer">
+			<div class="upper">
+			<div class="headtext">
+				<h4>Support</h4>
+				<div class="link"><a href="#help">Help Centre</a></div>
+				<div class="link"><a href="#safety">Safety information</a></div>
+				<div class="link"><a href="#cancel">Cancellation options</a></div>
+				<div class="link"><a href="#covid">Our COVID-19 Response</a></div>
+				<div class="link"><a href="#support">Supporting people with disabilities</a></div>
+				<div class="link"><a href="#report">Report a neighbourhood concern</a></div>
+			</div>
+			<div class="headtext">
+				<h4>Community</h4>
+				<div class="link"><a href="#relief">bbstays.org: disaster relief housing</a></div>
+				<div class="link"><a href="#refugees">Support Afghan refugees</a></div>
+				<div class="link"><a href="#combating">Combating discrimination</a></div>
+			</div>
+			<div class="headtext">
+				<h4>Hosting</h4>
+				<div class="link"><a href="#try">Try hosting</a></div>
+				<div class="link"><a href="#protect"> protection for Hosts</a></div>
+				<div class="link"><a href="#explore">Explore hosting resources</a></div>
+				<div class="link"><a href="#community">Visit our community forum</a></div>
+				<div class="link"><a href="#responsible">How to host responsibly</a></div>
+			</div>
+			<div class="headtext">
+				<h4>About</h4>
+				<div class="link"><a href="#news">Newsroom</a></div>
+				<div class="link"><a href="#learn">Learn about new features</a></div>
+				<div class="link"><a href="#letter">Letter from our founders</a></div>
+				<div class="link"><a href="#career">Careers</a></div>
+				<div class="link"><a href="#investor">Investors</a></div>
+				<div class="link"><a href="#center">Help Centre</a></div>
+			</div>
+			</div>
+			<div class="lower">
+				<div class="textline">
+					<span>&#169; 2022 bbstays,Inc.</span>
+					<a href="#privacy">&nbsp; Privacy</a>
+					<a href="#term">&nbsp; Terms</a>
+					<a href="#site">&nbsp; Sitemap</a>
+					<a href="#company">&nbsp; Company details</a>
+				</div>
+				<div class="social">
+					<a href="#eng">&nbsp; <i class="fa fa-globe"></i>English(IN)</a>
+					<a href="#inr">&nbsp; &#x20B9; INR</a>
+					<a href="#facebook">&nbsp; <i class="fa fa-facebook"></i></a>
+					<a href="#twitter">&nbsp; <i class="fa fa-twitter"></i></a>
+					<a href="#instagram">&nbsp; <i class="fa fa-instagram"></i></a>
+				</div>
+			</div>
+		</section>
+	</footer>
+
+
+	<!-- Footer section ends -->
+
+
+
+<script src="template.js" type="text/javascript"></script>
+</body>
+</html>
+
+
+
+
+
+
+
